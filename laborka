@@ -1,0 +1,100 @@
+package sqrt_abs;
+ 
+import java.util.Scanner;
+ 
+public class Main {
+ 
+    public static void main(String[] args) {
+       
+       
+        Scanner in = new Scanner(System.in);
+       int pierwsza_l;  // dwie liczby, na których będziemy wykonywać operację
+       int druga_l;
+       char znak;      // zmienna przechowująca symbol operacji do wykonania
+       Scanner wej = new Scanner(System.in);   // wczytywanie zmiennych 
+       System.out.println("Podaj pierwszą liczbę:"); // przy pomocy Scanner
+       pierwsza_l = wej.nextInt();
+       System.out.println("Podaj drugą liczbę:");
+       druga_l = wej.nextInt();
+       
+ 
+       System.out.println("Dodawanie dwóch liczb - wciśnij +");
+       System.out.println("Odejmowanie dwóch liczb - wciśnij -");
+       System.out.println("Mnożenie dwóch liczb - wciśnij *");
+       System.out.println("Dzielenie dwóch liczb - wciśnij /");
+       System.out.println("Operacaja modulo - wciśnij %");
+       System.out.println("Operacaja pierwiastkowania - wciśnij p i podaj nowe liczby");
+       System.out.println("Operacaja pierwiastkowania - wciśnij k i  podaj nowe liczby");
+       
+       
+       
+      
+ 
+       znak = wej.next().charAt(0);  // pobieramy symbol operacji od użytkownika
+       switch(znak)     // w zależności od wyboru wykonujemy daną operację
+       {
+          
+           case 'p':    // pierwiastkowanie
+        	   
+           {   System.out.println(" Podaj liczbę do pierwiastkowania");
+        	   double pierwsza_1 = in.nextDouble();
+               double sqrtLiczby = Math.sqrt(pierwsza_1);
+               System.out.println("Pierwiastek drugiego stopnia z "+ pierwsza_1 +
+                       " wynosi " + sqrtLiczby);
+               break;
+           }
+           case 'k':    // potęgowanie
+        	   
+           {   System.out.println(" Podaj podstawę");
+        	   double podstawa = in.nextDouble();
+        	   System.out.println(" Podaj stopień");
+        	   double stopien = in.nextDouble();
+               double potLiczby = Math.pow(podstawa,stopien);
+               System.out.println("Potęga liczby " + podstawa + " stopnia "+ stopien +
+                       " wynosi " + potLiczby);
+               break;
+           }
+           case '+':    // dodawanie dwóch zmiennych
+           {
+               System.out.println(pierwsza_l + druga_l);
+               break;
+           }
+           case '-':    // odejmowanie dwóch zmiennych
+           {
+               System.out.println(pierwsza_l - druga_l);
+               break;
+           }
+           case '*':    // mnożenie dwóch zmiennych
+           {
+               System.out.println(pierwsza_l * druga_l);
+               break;
+           }
+           case '/':   // sprawdzenie, czy druga zmienna nie jest zerem oraz
+           {           // dzielenie dwóch zmiennych 
+               if(druga_l !=0)
+               {
+                 System.out.println(pierwsza_l / druga_l + "oraz reszty: " +
+                         pierwsza_l % druga_l);
+               }
+               else
+               {
+                   System.out.println("Nie dzielimy przez zero!!!");
+               }
+               break;
+           }
+           case '%':  //  operacja modulo
+           {
+               if(druga_l !=0)  // sprawdzenie warunku dzielenia przez 0
+               {
+                   System.out.println(pierwsza_l % druga_l);
+               }
+               else
+               {
+                   System.out.println("Nie dzielimy przez zero!!");
+               }
+           }
+ 
+       }
+ 
+    }
+}
